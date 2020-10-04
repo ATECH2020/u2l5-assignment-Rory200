@@ -5,20 +5,24 @@ public class ConstructionTester
 {
     public static void main(String[] args)
     {
-        Scanner scanner = new Scanner(System.in);
+        
 
         //initializes variables
 
-        double taxRate = scanner.nextDouble();
-        double windows = scanner.nextDouble();
-        double lumber = scanner.nextDouble();
+        double taxRate;
+        double windows;
+        double lumber;
         double total;
+        int numBoards = 8;
+        int numWindows = 11;
+        double grandTotal;
 
 
         //creates a new scanner 
         
-
-        total = (lumber * 8) + (windows * 11);
+        Scanner scanner = new Scanner(System.in);
+       
+        
         
         //asks for the values
         System.out.println("Enter the sales tax rate:");
@@ -26,10 +30,18 @@ public class ConstructionTester
         
         System.out.println("How many boards do you need?");
         lumber = scanner.nextDouble();
+        
 
         System.out.println("How many windows do you need?");
         windows = scanner.nextDouble();
 
+        //does stupid math
+        lumber = lumber * numBoards;
+        windows = windows * numWindows;
+        total = lumber + windows;
+        grandTotal = total * (1 + taxRate);
+
+        //tells totals
         System.out.println("Total : " + total);
 
         System.out.println("Grand Totoal : " + total * (1 + taxRate));
