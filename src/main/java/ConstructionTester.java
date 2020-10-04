@@ -1,32 +1,38 @@
 import java.util.Scanner;
 
+
 public class ConstructionTester
 {
     public static void main(String[] args)
     {
+        Scanner scanner = new Scanner(System.in);
+
         //initializes variables
 
-        double taxRate;
-        int windows;
-        int lumber;
+        double taxRate = scanner.nextDouble();
+        double windows = scanner.nextDouble();
+        double lumber = scanner.nextDouble();
         double total;
-        
+
+
         //creates a new scanner 
-        Scanner in = new Scanner(System.in);
+        
+
+        total = (lumber * 8) + (windows * 11);
         
         //asks for the values
         System.out.println("Enter the sales tax rate:");
-        taxRate = in.nextDouble();
+        taxRate = scanner.nextDouble();
         
         System.out.println("How many boards do you need?");
-        lumber = in.nextInt();
+        lumber = scanner.nextDouble();
 
         System.out.println("How many windows do you need?");
-        windows = in.nextInt();
+        windows = scanner.nextDouble();
 
-        System.out.println("Total : ");
+        System.out.println("Total : " + total);
 
-        System.out.println("Grand Totoal : ");
+        System.out.println("Grand Totoal : " + total * (1 + taxRate));
 
     }
 }
